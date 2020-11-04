@@ -1,0 +1,1 @@
+#Creating a stock portfolio web app using Django making use of free stock API

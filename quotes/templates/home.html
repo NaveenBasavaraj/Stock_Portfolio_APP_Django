@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>NAVEEN'S STOCK APP</h2>
+{%if api%}
+    {% if api == "Error...."%}
+        There was a problem with the ticker symbol,
+        Please try laterrrrrrrrr.......
+    {% else %}
+    
+        <h3>{{api.companyName}}</h3><br/>
+        Price : ${{ api.latestPrice }}<br/>
+        Previous: ${{ api.previousClose }}<br/>
+        mktCap: ${{ api.marketCap }}<br/>
+        YTDChange: ${{ api.ytdChange }}<br/>
+        52High: ${{ api.week52High }}<br/>
+        52Low: ${{ api.week52Low }}<br/>
+<!--
+        {% for key,value in api.items %}
+            {{ key }}:{{ value }} <br>
+
+        {% endfor %}-->
+    {% endif %}
+
+{% endif %}
+{% endblock %}
